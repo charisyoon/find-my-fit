@@ -15,31 +15,31 @@ const Navbar = () => {
         onClick={() => navigate('/')}
         className="flex-1 flex justify-center"
       >
-        <img src="/home-icon.jpeg" alt="Home" className="w-6 h-6" />
+        <img src="/home-icon.png" alt="Home" className="w-6 h-6" />
       </button>
       <button 
         onClick={() => navigate('/notifications')} // Updated to go to notifications
         className="flex-1 flex justify-center"
       >
-        <img src="/heart-icon.jpeg" alt="Notifications" className="w-6 h-6" />
+        <img src="/heart-icon.png" alt="Notifications" className="w-6 h-6" />
       </button>
       <button 
         onClick={() => navigate('/new-listing')}
         className="flex-1 flex justify-center"
       >
-        <img src="/plus-icon.jpeg" alt="Add" className="w-6 h-6" />
+        <img src="/plus-icon.png" alt="Add" className="w-6 h-6" />
       </button>
       <button 
         onClick={() => navigate('/messages')}
         className="flex-1 flex justify-center"
       >
-        <img src="/message-icon.jpeg" alt="Messages" className="w-6 h-6" />
+        <img src="/message-icon.png" alt="Messages" className="w-6 h-6" />
       </button>
       <button 
         onClick={() => navigate('/profile')}
         className="flex-1 flex justify-center"
       >
-        <img src="/person-icon.jpeg" alt="Profile" className="w-6 h-6" />
+        <img src="/person-icon.png" alt="Profile" className="w-6 h-6" />
       </button>
     </div>
   );
