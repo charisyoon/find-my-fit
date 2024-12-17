@@ -70,7 +70,7 @@ Ensure you have the following tools installed on your machine:
 
 1. Visit the React app at **http://localhost:3000/**.
 2. Test submitting an offer:
-   - Go to the product details page.
+   - Go to the product details page **(from the profile page, click on the diamond sweater picture item)**
    - Click on **"MAKE OFFER"**.
    - Submit either a **money offer** or a **trade offer**.
 3. Check the success message and verify the Flask backend logs for the submitted data.
