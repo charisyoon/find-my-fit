@@ -65,13 +65,38 @@ const MarketplaceListing = () => {
     return false;
   };
 
-  const handleSubmitOffer = (e) => {
+  const handleSubmitOffer = async (e) => {
     e.preventDefault();
-    alert(`Offer submitted: ${offerType === 'money' ? `$${offerAmount}` : `Trade: ${tradeItem}`}`);
-    setShowOfferModal(false);
-    setOfferAmount('');
-    setTradeItem('');
+  
+    const payload = {
+      listing_id: 1, // For demo purposes, hardcoding a listing ID
+      type: offerType,
+      amount: offerType === 'money' ? parseFloat(offerAmount) : null,
+      trade_item: offerType === 'trade' ? tradeItem : null,
+    };
+  
+    try {
+      const response = await fetch('http://127.0.0.1:5000/api/offer', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+  
+      const data = await response.json();
+      alert(`Offer submitted successfully! Offer ID: ${data.id}`);
+  
+      // Reset form and modal
+      setShowOfferModal(false);
+      setOfferAmount('');
+      setTradeItem('');
+    } catch (error) {
+      console.error('Error submitting offer:', error);
+      alert('Failed to submit offer. Please try again.');
+    }
   };
+  
 
   return (
     <div className="fixed inset-0 bg-white">
